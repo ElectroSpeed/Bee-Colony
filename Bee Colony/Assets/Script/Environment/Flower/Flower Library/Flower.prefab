@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249146effb23afb4f9592bed39b3da2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flower
-  _data: {fileID: 0}
-  _environment: {fileID: 0}
+  _data: {fileID: 11400000, guid: 229be8a6273dded4fa8afa9e3870fc27, type: 2}

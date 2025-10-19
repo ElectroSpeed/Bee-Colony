@@ -3,6 +3,7 @@ using UnityEngine;
 
 public interface IPower
 {
+    void SwitchActivationPower();
     void ActivatePower();
     bool CanActivatePower();
 }

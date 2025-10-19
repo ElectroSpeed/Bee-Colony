@@ -10,4 +10,19 @@ public class GenericTarget : ITarget
         _entity = obj;
         _position = obj.transform.position;
     }
+    
+    public Transform GetTransform()
+    {
+        return _entity != null ? _entity.transform : null;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return _position;
+    }
+
+    public GameObject GetEntity()
+    {
+        return _entity;
+    }
 }

@@ -2,17 +2,21 @@ using System.Collections.Generic;
 
 public class SunEffect : IEffect
 {
-    private EnvironmentManager _env;
+    private EnvironmentManager _environment;
     private float _intensity;
 
-    public SunEffect(EnvironmentManager env, float intensity)
+    public SunEffect(EnvironmentManager environment, float intensity)
     {
-        _env = env;
+        _environment = environment;
         _intensity = intensity;
     }
 
     public void ApplyEffect(IEnumerable<ITarget> targets)
     {
-        _env.SetSunlight(_env._sunlight + _intensity);
+        if (_environment == null)
+        {
+            return;
+        }
+        _environment.SetSunlight(_environment._sunlight + _intensity);
     }
 }

@@ -3,21 +3,24 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     [SerializeField] private FlowerData _data;
-    [SerializeField] private EnvironmentManager _environment;
+    
+    private EnvironmentManager _environment;
 
     private float _growthProgress;
-
     private float _timer;
     private float _elapsedLifeTime;
+    private float _regenTimer;
 
     private bool _isGrowing = false;
     private bool _canBePollinated = false;
     private bool _isGrowed = false;
+    private bool _hasPollen = false;
 
     private Transform _model;
 
     private void Start()
     {
+        _environment = FindObjectOfType<EnvironmentManager>();
         if (_data._flowerPrefab != null)
         {
             _model = Instantiate(_data._flowerPrefab, transform).transform;
@@ -40,14 +43,11 @@ public class Flower : MonoBehaviour
         }
 
         Grow();
-
     }
 
     private void PassingLife()
     {
         _elapsedLifeTime += Time.deltaTime;
-
-        Debug.Log(_elapsedLifeTime);
 
         if (_elapsedLifeTime >= _data._lifeDuration)
         {
@@ -75,9 +75,31 @@ public class Flower : MonoBehaviour
         {
             _isGrowed = true;
             _canBePollinated = true;
+            _hasPollen = true;
         }
     }
+    
+    public bool ContainsPollen() => _canBePollinated && _hasPollen;
+    
+    public int GetPollen()
+    {
+        if (!_hasPollen)
+            return 0;
 
-    public bool ContainsPollen() => _canBePollinated;
-    public int GetPollen() => _data._pollenAmount;
+        int amount = _data._pollenAmount;
+        _hasPollen = false;
+        _canBePollinated = false;
+        _regenTimer = 0f;
+
+        return amount;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_isGrowed)
+        {
+            Gizmos.color = _hasPollen ? Color.yellow : Color.gray;
+            Gizmos.DrawSphere(transform.position + Vector3.up * 0.5f, 0.15f);
+        }
+    }
 }

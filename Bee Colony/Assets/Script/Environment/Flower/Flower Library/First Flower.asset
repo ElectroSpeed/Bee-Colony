@@ -38,9 +38,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _growthDuration: 10
-  _lifeDuration: 5
+  _lifeDuration: 30
   _pollenAmount: 4
-  _flowerPrefab: {fileID: 8568231281111072362, guid: b5f04805fd3a82a45a316342358a4159, type: 3}
+  _flowerPrefab: {fileID: 266392133285628909, guid: 3d0e93d77dfdc5d419c094083c6c6726, type: 3}
   _minHumidity: 50
   _maxHumidity: 100
   _minSunlight: 50

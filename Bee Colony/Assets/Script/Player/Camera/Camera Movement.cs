@@ -36,8 +36,14 @@ public class CameraMovement : MonoBehaviour
     {
         _currentZoom = Vector3.Distance(_playerCamera.position, _pivotCamera.position);
         _targetPosition = _pivotCamera.position;
+        
+        Vector3 euler = _pivotCamera.localEulerAngles;
+        _rotationX = euler.y;
+        _rotationY = euler.x;
+
         UpdateCameraPosition();
     }
+
 
     #region Click Detection
 

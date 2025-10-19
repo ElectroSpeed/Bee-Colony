@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2df4b7d203cd974c8b54c6a3ec01043, type: 3}
+  m_Name: Destroy Bee Power
+  m_EditorClassIdentifier: Assembly-CSharp::PowerData
+  _powerName: Destroy Bee
+  _cooldown: 2
+  _targetingPrefab: {fileID: 11400000, guid: ea0b274c2b4a921439dbf1f3a5cbf97c, type: 2}
+  _effectPrefabs:
+  - {fileID: 11400000, guid: c931fa4b8f4e14f42a2f1de09c88b11f, type: 2}
+  _soundEffect: 0

@@ -2,17 +2,21 @@ using System.Collections.Generic;
 
 public class RainEffect : IEffect
 {
-    private EnvironmentManager _env;
+    private EnvironmentManager _environment;
     private float _intensity;
 
-    public RainEffect(EnvironmentManager env, float intensity)
+    public RainEffect(EnvironmentManager environment, float intensity)
     {
-        _env = env;
+        _environment = environment;
         _intensity = intensity;
     }
 
     public void ApplyEffect(IEnumerable<ITarget> targets)
     {
-        _env.SetHumidity(_env._humidity + _intensity);
+        if (_environment == null)
+        {
+            return;
+        }
+        _environment.SetHumidity(_environment._humidity + _intensity);
     }
 }

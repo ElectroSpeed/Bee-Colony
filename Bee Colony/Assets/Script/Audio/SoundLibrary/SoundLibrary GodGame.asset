@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bb6fead1a2bf93488de88b5d9ff8019, type: 3}
+  m_Name: SoundLibrary GodGame
+  m_EditorClassIdentifier: Assembly-CSharp::SoundLibrary
+  _musicSounds: []
+  _sfxSounds:
+  - _name: Sun
+    _clip: {fileID: 8300000, guid: 4ca01017919e490458f31d8b9dc54267, type: 3}
+    _loop: 1
+  - _name: Rain
+    _clip: {fileID: 8300000, guid: 4c78d8c7006abbf4ebbd20ff66d3562c, type: 3}
+    _loop: 1
